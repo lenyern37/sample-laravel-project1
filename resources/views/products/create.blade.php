@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sample Web Application using Laravel - Products</title>
 </head>
 <body>
     <h1>Add New Product</h1>
     <div>
-        <form action="/product/insert" method="post">
+        <form action="{{route('product.insert')}}" method="post">
             @csrf
-            @method('post')
+
             <div><label for="name">Product Name:</label>
                 <input type="text" name="name" id="txtname" placeholder="Name" required />
             </div>

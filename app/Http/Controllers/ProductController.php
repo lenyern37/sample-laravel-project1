@@ -4,13 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
     //
     public function index()
     {
-        return view('products.index');
+        //$p = DB::select('select * from products');
+        $p = Product::all();
+
+        return view('products.index', ['products' => $p]);
+        //return view('products.index');
     }
 
     public function create()
